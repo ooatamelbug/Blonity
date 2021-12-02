@@ -6,6 +6,7 @@ const databaseConnection = async () => {
       database: "blonity",
       password: "postgres",
       type: "postgres",
+      port: 5433,
       logging: true,
       entities: ["../entities/*.ts"],
       synchronize: true,
