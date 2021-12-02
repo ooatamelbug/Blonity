@@ -5,3 +5,8 @@ export interface ResponseDataInterface {
     url?: string;
     time?:  string;
 }
+
+export interface ReturnDataInterface {
+    statusCode: number;
+    response: ResponseDataInterface
+}

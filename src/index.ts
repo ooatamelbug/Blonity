@@ -1,3 +1,4 @@
+import { routerApp } from './shared/routers';
 import "reflect-metadata";
 // import express
 import express, { Application } from "express";
@@ -39,7 +40,10 @@ const createApp = async () => {
         contentSecurityPolicy: true,
         crossOriginResourcePolicy: true
     }));
-
+    
+    // pass app to routerApp
+    routerApp(app);
+    
     // use handleError
     app.use(handleError);
 
