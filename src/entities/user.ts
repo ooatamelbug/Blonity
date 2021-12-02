@@ -1,3 +1,4 @@
+// import some of function from typeorm
 import {
   Entity,
   Column,
@@ -7,9 +8,15 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 
+// import some of function from class-validator
 import { Length, IsNotEmpty, IsEmail } from "class-validator";
 
+// import some of function from bcryptjs
+import { hashSync, compareSync } from "bcryptjs";
+
+// create Entity
 @Entity()
+// make class of Entity User that extends from BaseEntity
 class User extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id: string;
@@ -53,6 +60,16 @@ class User extends BaseEntity {
   
   @UpdateDateColumn()
   updatedAt: Date
+
+  // create hashPassword function for encrypt password
+  async hashPassword () {
+    this.password = hashSync(this.password, 12);
+  }
+
+  // create compareTwoPassword function for compare password
+  async compareTwoPassword (unEncryptedPassword: string) {
+    return compareSync(unEncryptedPassword, this.password);
+  }
 }
 
 export default User;
