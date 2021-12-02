@@ -55,6 +55,9 @@ class User extends BaseEntity {
   @Column({ nullable: true })
   job: string;
 
+  @Column({ default: false })
+  activate: boolean
+
   @CreateDateColumn()
   createdAt: Date
   
