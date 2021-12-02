@@ -4,6 +4,11 @@ import express, { Application } from "express";
 // import dotenv and config it
 import dotenv from "dotenv";
 dotenv.config();
+// import cors
+import cors from "cors";
+// import helmet
+import helmet from "helmet";
+
 
 /**
  * the function to create app of express
@@ -13,6 +18,23 @@ const createApp = async () => {
     const app: Application = express();
     // use the json deal type in app
     app.use(express.json());
+    
+    // app use cors allow access cors
+    app.use(cors({
+        origin: "*",
+        allowedHeaders: ['Origin', 'X-Request-With', 'Content-Type', 'Accept'],
+        methods: ['DELETE', 'PATCH', 'PUT', 'GET', 'POST', 'OPTIONS'],
+        preflightContinue: false,
+        maxAge: 60 * 60 * 24,
+        optionsSuccessStatus: 204
+    }));
+
+    // app use helmet to Security header
+    app.use(helmet({
+        contentSecurityPolicy: true,
+        crossOriginResourcePolicy: true
+    }));
+
     // app listen to PORT 
     app.listen(process.env.PORT, () => {
         console.log(`the app is run on ${process.env.PORT}`);
