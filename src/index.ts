@@ -4,11 +4,14 @@ import express, { Application } from "express";
 // import dotenv and config it
 import dotenv from "dotenv";
 dotenv.config();
+// import db
+import databaseConnection from "./settings/database";
 // import cors
 import cors from "cors";
 // import helmet
 import helmet from "helmet";
-
+// import handleError
+import handleError from "./settings/errorHandle";
 
 /**
  * the function to create app of express
@@ -19,6 +22,8 @@ const createApp = async () => {
     // use the json deal type in app
     app.use(express.json());
     
+    // connect db 
+    databaseConnection();
     // app use cors allow access cors
     app.use(cors({
         origin: "*",
@@ -34,6 +39,9 @@ const createApp = async () => {
         contentSecurityPolicy: true,
         crossOriginResourcePolicy: true
     }));
+
+    // use handleError
+    app.use(handleError);
 
     // app listen to PORT 
     app.listen(process.env.PORT, () => {
