@@ -7,7 +7,7 @@
     "watch": "tsc -w",
     "start:dev": "nodemon --exec ts-node ./src/index.ts",
     "start:prod": "nodemon ./dist/index.js",
-    "test": "jest -watch"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
