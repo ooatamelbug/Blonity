@@ -26,7 +26,7 @@ app.use(
     allowedHeaders: ["Origin", "X-Request-With", "Content-Type", "Accept"],
     methods: ["DELETE", "PATCH", "PUT", "GET", "POST", "OPTIONS"],
     preflightContinue: false,
-    maxAge: 60 * 60 * 24,
+    maxAge: 60 * 60 * 24 * 365,
     optionsSuccessStatus: 204,
   })
 );
