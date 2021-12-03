@@ -12,7 +12,7 @@ import {
 import { Length, IsNotEmpty, IsEmail } from "class-validator";
 
 // import some of function from bcryptjs
-import { hashSync, compareSync } from "bcryptjs";
+import { hashSync, compareSync, genSaltSync } from "bcryptjs";
 
 // create Entity
 @Entity()
@@ -66,7 +66,8 @@ class User extends BaseEntity {
 
   // create hashPassword function for encrypt password
   async hashPassword () {
-    this.password = hashSync(this.password, 12);
+    const salt = genSaltSync(12);
+    this.password = hashSync(this.password, salt);
   }
 
   // create compareTwoPassword function for compare password
