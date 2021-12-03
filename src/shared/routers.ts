@@ -9,5 +9,5 @@ import userRouter from "../routes/User";
  * @param app 
  */
 export const routerApp = (app: Application) => {
-    app.use('/user', userRouter);
+    app.use('/api/user', userRouter);
 }

@@ -1,5 +1,6 @@
 // import Router from express
 import { Router } from "express";
+import { validate } from "../middleware/validation";
 // import userController from controllers
 import userController from "../controllers/User";
 
@@ -12,7 +13,7 @@ const router = Router({ mergeParams: true});
  * @controller userController
  * @function registerUser
  */
-router.post('/create', [], userController.registerUser);
+router.post('/create', [validate], userController.registerUser);
 
 
 
