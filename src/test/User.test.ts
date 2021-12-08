@@ -17,9 +17,19 @@ describe("test user service api", () => {
     });
     expect(res.statusCode).toBe(400);
     expect(res.body).not.toBeNull();
-    expect(res.body).toHaveProperty("message");
+    expect(res.body).toHaveProperty("message", 'Validation Error');
     expect(res.body.errors).toHaveLength(1);
     expect(res.body.inputValidation).not.toBeNull();
+  });
+
+  it('test validation of password getout error', async () => {
+    const res = await request.post("/api/user/create").send({
+      username: "username1",
+      password: ""
+    });
+    expect(res.statusCode).toBe(400);
+    expect(res.body).toHaveProperty('message', 'Validation Error');
+    expect(res.body.errors).toContain('password is not allowed to be null');
   });
 
   it("test user return object", async () => {
