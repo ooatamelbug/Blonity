@@ -677,11 +677,6 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jasmine@^3.10.2":
-  version "3.10.2"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.10.2.tgz#1b9f9ba9ad7bfd7d322f7ed9d8753220b1c84b52"
-  integrity sha512-qs4xjVm4V/XjM6owGm/x6TNmhGl5iKX8dkTdsgdgl9oFnqgzxLepnS7rN9Tdo7kDmnFD/VEqKrW57cGD2odbEg==
-
 "@types/jest@^27.0.3":
   version "27.0.3"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.0.3.tgz#0cf9dfe9009e467f70a342f0f94ead19842a783a"
@@ -1254,11 +1249,6 @@ color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
-
-colors@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
-  integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
 
 combined-stream@^1.0.8:
   version "1.0.8"
@@ -2271,33 +2261,6 @@ istanbul-reports@^3.0.2:
   dependencies:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
-
-jasmine-core@~3.10.0:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-3.10.1.tgz#7aa6fa2b834a522315c651a128d940eca553989a"
-  integrity sha512-ooZWSDVAdh79Rrj4/nnfklL3NQVra0BcuhcuWoAwwi+znLDoUeH87AFfeX8s+YeYi6xlv5nveRyaA1v7CintfA==
-
-jasmine-spec-reporter@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/jasmine-spec-reporter/-/jasmine-spec-reporter-7.0.0.tgz#94b939448e63d4e2bd01668142389f20f0a8ea49"
-  integrity sha512-OtC7JRasiTcjsaCBPtMO0Tl8glCejM4J4/dNuOJdA8lBjz4PmWjYQ6pzb0uzpBNAWJMDudYuj9OdXJWqM2QTJg==
-  dependencies:
-    colors "1.4.0"
-
-jasmine-ts@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/jasmine-ts/-/jasmine-ts-0.4.0.tgz#b228c450cb70471344ce154c0e47d2f588f4a479"
-  integrity sha512-bIAWJKUwxfuZfGI1ctEbny7+dsyFzsN0eLzOokxh0qIUCofai2WUEKoe3MMllkGEBXJzbEVYr2IyhJBv4j7SBA==
-  dependencies:
-    yargs "^17.0.1"
-
-jasmine@^3.10.0:
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-3.10.0.tgz#acd3cd560a9d20d8fdad6bd2dd05867d188503f3"
-  integrity sha512-2Y42VsC+3CQCTzTwJezOvji4qLORmKIE0kwowWC+934Krn6ZXNQYljiwK5st9V3PVx96BSiDYXSB60VVah3IlQ==
-  dependencies:
-    glob "^7.1.6"
-    jasmine-core "~3.10.0"
 
 jest-changed-files@^27.4.2:
   version "27.4.2"
