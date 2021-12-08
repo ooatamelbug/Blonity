@@ -18,7 +18,7 @@ describe("test user service api", () => {
     expect(res.statusCode).toBe(400);
     expect(res.body).not.toBeNull();
     expect(res.body).toHaveProperty("message", 'Validation Error');
-    expect(res.body.errors).toHaveLength(1);
+    expect(res.body.errors.length).toBeGreaterThanOrEqual(1);
     expect(res.body.inputValidation).not.toBeNull();
   });
 
@@ -35,6 +35,7 @@ describe("test user service api", () => {
   it("test user return object", async () => {
     const res = await request.post("/api/user/create").send({
       username: "name",
+      password: "name234r4"
     });
     expect(res.statusCode).toEqual(200);
   });
