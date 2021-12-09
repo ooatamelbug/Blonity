@@ -14,7 +14,7 @@ const databaseConnection = async () => {
       username: "postgres",
       type: "postgres",
       port: 5432,
-      logging: true,
+      logging: false,
       entities: ["../entities/**.ts"],
       synchronize: true,
     });

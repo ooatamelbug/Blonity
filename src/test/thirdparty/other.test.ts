@@ -6,13 +6,14 @@ describe("test send email", () => {
       sender: "",
       to: "",
       msg: "",
+      subject: ""
     };
     const  spyEmail = jest.spyOn(email, 'send');
     const send = email.send(param);
 
     expect(spyEmail).toHaveBeenCalled();
-    expect(send).toHaveProperty('message', 'error');
-    expect(send).toHaveProperty('status', 400);
+    expect(send).resolves.toHaveProperty('message', 'error');
+    expect(send).resolves.toHaveProperty('status', 400);
   });
 
   it("it return ERROR sender formate", async () => {
@@ -20,13 +21,14 @@ describe("test send email", () => {
       sender: "sender",
       to: "to",
       msg: "thanks",
+      subject: "email"
     };
     const  spyEmail = jest.spyOn(email, 'send');
     const send = email.send(param);
 
     expect(spyEmail).toHaveBeenCalled();
-    expect(send).toHaveProperty('message', 'error');
-    expect(send).toHaveProperty('status', 400);
+    expect(send).resolves.toHaveProperty('message', 'error');
+    expect(send).resolves.toHaveProperty('status', 400);
   });
 
   it("it return ERROR to formate", async () => {
@@ -34,27 +36,29 @@ describe("test send email", () => {
       sender: "sender@gmail.com",
       to: "to",
       msg: "thanks",
+      subject: "email"
     };
     const  spyEmail = jest.spyOn(email, 'send');
     const send = email.send(param);
 
     expect(spyEmail).toHaveBeenCalled();
-    expect(send).toHaveProperty('message', 'error');
-    expect(send).toHaveProperty('status', 400);
+    expect(send).resolves.toHaveProperty('message', 'error');
+    expect(send).resolves.toHaveProperty('status', 400);
   });
 
   it("it return ok", async () => {
     const param = {
-      sender: "sender@gmail.com",
-      to: "to@gmail.com",
+      sender: "admin@blonity.com",
+      to: "‪mohqweeaed@gmail.com",
       msg: "thanks",
+      subject: "email"
     };
     const  spyEmail = jest.spyOn(email, 'send');
     const send = email.send(param);
 
     expect(spyEmail).toHaveBeenCalled();
-    expect(send).toHaveProperty('message', `ok send to ${param.to}`);
-    expect(send).toHaveProperty('status', 200);
+    expect(send).resolves.toHaveProperty('message', `ok send to ${param.to}`);
+    expect(send).resolves.toHaveProperty('status', 200);
   });
 
 });
